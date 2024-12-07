@@ -1,0 +1,28 @@
+<% layout('layout') %>
+<div class="container">
+    <h2 class="text-primary">Edit Tugas Pendahuluan</h2>
+    <form action="/edit/<%= tugas._id %>" method="POST">
+        <div class="mb-3">
+            <label for="judul" class="form-label">Judul TP</label>
+            <input type="text" name="judul" id="judul" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="subJudul" class="form-label">Sub Judul TP</label>
+            <input type="text" name="subJudul" id="subJudul" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="kategori" class="form-label">Kategori TP</label>
+            <input type="text" name="kategori" id="kategori" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="deadline" class="form-label">Deadline TP</label>
+            <input type="text" name="deadline" id="deadline" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="deskripsi" class="form-label">Deskripsi TP</label>
+            <textarea name="deskripsi" id="deskripsi" rows="4" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-warning">Simpan Perubahan</button>
+        <a href="/submit" class="btn btn-secondary">Batal</a>
+    </form>
+</div>

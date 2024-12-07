@@ -1,0 +1,50 @@
+<% layout('layout') %>
+<div>
+    <h2 class="text-primary"><strong>Post Tugas Pendahuluan Praktikum</strong></h2>
+    <form action="/submit" method="POST" class="mb-4">
+        <div class="mb-3">
+            <label for="judul" class="form-label">Judul TP</label>
+            <input type="text" name="judul" id="judul" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="subJudul" class="form-label">Sub Judul TP</label>
+            <input type="text" name="subJudul" id="subJudul" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="kategori" class="form-label">Kategori TP</label>
+            <input type="text" name="kategori" id="kategori" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="deadline" class="form-label">Deadline TP</label>
+            <input type="text" name="deadline" id="deadline" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="deskripsi" class="form-label">Deskripsi TP</label>
+            <textarea name="deskripsi" id="deskripsi" rows="4" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-warning">Post TP</button>
+    </form>
+
+    <h3 class="text-primary"><strong>Daftar TP</strong></h3>
+    <ul class="list-group">
+        <% tugas.forEach(tugas => { %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <strong>Judul: <%= tugas.judul %></strong> 
+                <p>Sub Judul: <%= tugas.subJudul %></p>
+                <hr>
+                <p>Kategori: <%= tugas.kategori %></p>
+                <p>Tanggal Post: <%= tugas.createdAt.getDate() %>-<%= tugas.createdAt.getMonth()+1 %>-<%= tugas.createdAt.getFullYear() %></p>
+                <p class="text-danger">Deadline: <%= tugas.deadline %></p>
+                <p class="text-secondary"><%= tugas.deskripsi %></p>
+            </div>
+            <div>
+                <a href="/edit/<%= tugas._id %>" class="btn btn-primary btn-sm">Edit</a>
+                <form action="/delete/<%= tugas._id %>" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                </form>
+            </div>
+        </li>
+        <% }) %>
+    </ul>
+</div>

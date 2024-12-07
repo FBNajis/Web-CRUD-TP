@@ -1,0 +1,62 @@
+html, body {
+    height: 100%; 
+    margin: 0; 
+}
+
+body {
+    display: flex;
+    flex-direction: column; 
+    background-image: url(images/IFgradient.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'rotunda', sans-serif;
+}
+
+header {
+    background-color: #ffffff00; 
+    padding: 20px;
+}
+
+main {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    padding: 20px;
+}
+
+footer {
+    background-color: #013179;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.text-primary {
+    color: #013179;
+}
+
+.text-warning {
+    color: #F8CD16;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+header nav a {
+    color: #F8CD16; 
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline; 
+}
+
